@@ -1,9 +1,8 @@
 import requests
 import pytest
 
-
-BASE_URL = "https://jsonplaceholder.typicode.com/users"
-DEFAULT_NAME = "Din"
+from conftest import DEFAULT_NAME
+from conftest import BASE_URL
 
 
 def test_get_users():
