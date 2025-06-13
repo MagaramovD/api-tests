@@ -36,4 +36,8 @@ pytest -v
 - Negative cases
 - Parametrize
 
+<<<<<<< HEAD
 ---
+=======
+---
+>>>>>>> 3d40ae8c202d1148772714cfadd11f936335ebf9
