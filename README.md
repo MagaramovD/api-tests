@@ -1,24 +1,34 @@
-# API Tests with Pytest + Requests
+# 🧪 Automation Testing Project — API + UI
 
-Autotests for public REST API [`jsonplaceholder.typicode.com`](https://jsonplaceholder.typicode.com) using **pytest** and **requests**.
+Autotests for:
 
----
+- Public REST API [`jsonplaceholder.typicode.com`](https://jsonplaceholder.typicode.com)
+- Web UI [`saucedemo.com`](https://www.saucedemo.com)
 
-## Project Structure
-
-```
-tests/
-├── test_users.py
-├── test_parameterization.py
-conftest.py
-requirements.txt
-README.md
-.gitignore
-```
+Built using **pytest**, **requests**, and **playwright**.
 
 ---
 
-## How to Run
+## 📁 Project Structure
+
+```
+project/
+├── pages/
+│   └── login_page.py         # Page Object Model for saucedemo login
+├── tests/
+│   ├── test_users.py         # API tests
+│   ├── test_parameterization.py # Parametrized API tests
+│   └── test_ui.py            # UI tests for saucedemo.com
+├── __init__.py               # marks folder as a module
+conftest.py                   # fixtures (e.g. base URL)
+requirements.txt              # dependencies
+README.md                     # you're reading it
+.gitignore                    # excludes cache, venv, etc.
+```
+
+---
+
+## ▶ How to Run
 
 ```bash
 pip install -r requirements.txt
@@ -27,17 +37,17 @@ pytest -v
 
 ---
 
-## Test Coverage
+## ✅ Test Coverage
 
+### API Tests
 - `GET /users`
 - `POST /users`
 - `PUT /users/1`
 - `DELETE /users/1`
 - Negative cases
-- Parametrize
+- Parametrized tests
 
-<<<<<<< HEAD
----
-=======
----
->>>>>>> 3d40ae8c202d1148772714cfadd11f936335ebf9
+### UI Tests
+- Login success with Page Object Model
+- Login with locked user
+- Wrong username and empty field validation
