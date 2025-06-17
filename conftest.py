@@ -1,8 +1,6 @@
 import pytest
 import requests
 
-
-BASE_URL = "https://jsonplaceholder.typicode.com/users"
 DEFAULT_NAME = "Din"
 
 
@@ -13,11 +11,16 @@ def auth_token():
     return response.json()["token"]
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def base_url():
-    return BASE_URL
+    return "https://jsonplaceholder.typicode.com/users"
 
 
 @pytest.fixture
 def default_name():
     return DEFAULT_NAME
+
+
+@pytest.fixture
+def saucedemo_url():
+    return "https://www.saucedemo.com/"

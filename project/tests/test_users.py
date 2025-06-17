@@ -2,11 +2,10 @@ import requests
 import pytest
 
 from conftest import DEFAULT_NAME
-from conftest import BASE_URL
 
 
-def test_get_users():
-    response = requests.get(BASE_URL)
+def test_get_users(base_url):
+    response = requests.get(base_url)
     assert response.status_code == 200
 
     data = response.json()
@@ -16,10 +15,10 @@ def test_get_users():
     assert "name" in data[0]
 
 
-def test_create_user():
+def test_create_user(base_url):
     payload_create = {"name": DEFAULT_NAME}
     response = requests.post(
-        BASE_URL, json=payload_create)
+        base_url, json=payload_create)
     assert response.status_code == 201, f"Expected status code 201, but got {response.status_code}"
     data = response.json()
     assert data["name"] == DEFAULT_NAME, f"Expected name {DEFAULT_NAME}, but got{data}"
