@@ -14,14 +14,15 @@ jobs:
         with:
           python-version: 3.12.10
 
-      - name: Install Playwright Browsers
-        run: |
-          python -m playwright install
-
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
           pip install allure-pytest
+          python -m playwright install
+
+      - name: Install Playwright Browsers
+        run: |
+          python -m playwright install
 
       - name: Run tests
         run: |
