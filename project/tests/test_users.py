@@ -1,5 +1,6 @@
 import requests
 import pytest
+import allure
 
 from conftest import DEFAULT_NAME
 

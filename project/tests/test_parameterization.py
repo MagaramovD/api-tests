@@ -1,5 +1,6 @@
 import pytest
 import requests
+import allure
 
 
 @pytest.mark.parametrize("name, status_code", [("ValidName", 201), ("", 201), (None, 201)])
