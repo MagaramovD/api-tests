@@ -8,8 +8,8 @@ import allure
 @allure.dynamic.title("Successful login with valid credentials")
 @allure.dynamic.severity(allure.severity_level.CRITICAL)
 @allure.dynamic.description("This test verifies that a user can log in using correct credentials.")
-@allure.dynamic.tag("UI", "Login")
 def test_login(page: Page, saucedemo_url):
+    allure.dynamic.tag("UI", "Login")
     with allure.step("Enter to website"):
         page.goto(saucedemo_url)
     assert "Swag Labs" in page.title()
