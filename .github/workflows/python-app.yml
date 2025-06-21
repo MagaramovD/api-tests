@@ -20,4 +20,4 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest --alluredir=allure-results
+          pytest project/tests --alluredir=allure-results
